@@ -19,7 +19,7 @@ const Friends = ({ username }: FriendProps) => {
 
       // Step 1: Get the list of friends' userIDs for the given username
       axios
-        .get("http://127.0.0.1:5000/getfriends", { params: { user: username } })
+        .get("https://api-mymovielist.azurewebsites.net/getfriends", { params: { user: username } })
         .then((res) => {
           const friendIDs = Array.isArray(res.data.friendsIDs)
             ? res.data.friendsIDs
@@ -29,7 +29,7 @@ const Friends = ({ username }: FriendProps) => {
           const fetchProfiles = friendIDs.map(
             (friendID: number) =>
               axios
-                .get("http://127.0.0.1:5000/getprofilebyid", {
+                .get("https://api-mymovielist.azurewebsites.net/getprofilebyid", {
                   params: { userid: friendID },
                 })
                 .then((response) => {
@@ -73,7 +73,7 @@ const Friends = ({ username }: FriendProps) => {
 
   const handleRemoveFriend = (friendUsername: string) => {
     axios
-      .post("http://127.0.0.1:5000/removefriend", {
+      .post("https://api-mymovielist.azurewebsites.net/removefriend", {
         user: username,
         friend: friendUsername,
       })

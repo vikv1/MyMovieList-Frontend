@@ -13,7 +13,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("http://127.0.0.1:5000/isuser", {
+      const response = await axios.post("https://api-mymovielist.azurewebsites.net/isuser", {
         user,
       });
       console.log(response.data);

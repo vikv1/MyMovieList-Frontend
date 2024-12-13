@@ -26,7 +26,7 @@ const Recommendations = ({ username }: RecommendationsProps) => {
     if (username.trim().length > 0) {
       setIsLoading(true);
       axios
-        .get("http://127.0.0.1:5000/viewRecommendations", {
+        .get("https://api-mymovielist.azurewebsites.net/viewRecommendations", {
           params: { user_name: username },
         })
         .then((res) => {
