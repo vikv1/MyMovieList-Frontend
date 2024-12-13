@@ -7,7 +7,7 @@ const SignUp = () => {
   const [fname, setFirstName] = useState("");
   const [lname, setLastName] = useState("");
   const [username, setUsername] = useState("");
-  const [message, setMessage] = useState("");
+  const [_message, setMessage] = useState("");
 
   const navigate = useNavigate();
 

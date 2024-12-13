@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 
 interface FriendProps {
@@ -10,7 +10,7 @@ const Friends = ({ username }: FriendProps) => {
     { name: string; avatar: string | null; username: string }[]
   >([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState("");
+  const [_error, setError] = useState("");
 
   useEffect(() => {
     if (username.trim().length > 0) {
@@ -77,7 +77,7 @@ const Friends = ({ username }: FriendProps) => {
         user: username,
         friend: friendUsername,
       })
-      .then((response) => {
+      .then((_response) => {
         setFriends(
           friends.filter((friend) => friend.username !== friendUsername)
         );

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import _React, { useState } from "react";
 import { useNavigate } from "react-router-dom"; // Import the useNavigate hook
 import Friends from "./Friends";
 import Recommendations from "./Recommendations";
